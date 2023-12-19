@@ -184,7 +184,7 @@ def process_image(img_content, model_name):
             elif model_name == 'resnet':
                 last_conv_layer = "conv2d_52"
             elif model_name == 'densenet':
-                last_conv_layer = "conv2d_119"
+                last_conv_layer = "conv2d_118"
 
             explanation_img_path = GradCAM_explain(
                 save_image_path, model, predicted_class, last_conv_layer
