@@ -1,4 +1,3 @@
-import hashlib
 import io
 import os
 import uuid
@@ -8,7 +7,6 @@ import numpy as np
 import requests
 import streamlit as st
 import tensorflow as tf
-from bs4 import BeautifulSoup
 from keras.models import Model, load_model
 from keras.utils import img_to_array, load_img
 from PIL import Image
