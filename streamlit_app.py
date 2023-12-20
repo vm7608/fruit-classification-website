@@ -1,5 +1,6 @@
 import io
 import os
+import time
 import uuid
 
 import cv2
@@ -156,6 +157,7 @@ def save_image_with_uuid(image):
 
 
 def process_image(img_content, model_name):
+    start_time = time.time()
     model = load_model(f"models/{model_name}.h5")
     try:
         img = Image.open(io.BytesIO(img_content))
@@ -198,6 +200,9 @@ def process_image(img_content, model_name):
 
         except Exception as e:
             st.error("Failed to generate GradCAM explanation. Error: {}".format(str(e)))
+
+        end_time = time.time()
+        st.info("Time taken: {} seconds".format(round(end_time - start_time, 2)))
 
     except Exception as e:
         st.error("Can't process the image. Please check the image and try again.")
